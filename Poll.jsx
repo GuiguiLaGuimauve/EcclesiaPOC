@@ -15,6 +15,24 @@ class Poll extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    getDataPoll() {
+        axios.get('http://navispeed.eu:7000/poll')
+            .then(function (response) {
+                document.getElementById('poll').innerHTML = response.data.map(function (news) {
+                    return (
+                        '<tr class=row>' +
+                        '<td>' + news.uuid + '</td>' +
+                        '<td>' + news.proposition + '</td>' +
+                        '<td>' + news.end + '</td>' +
+                        '</tr>'
+                    );
+                }).join('');
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
     handleChangeProposition(event) {
         this.setState({proposition: event.target.value});
     }
@@ -37,6 +55,7 @@ class Poll extends React.Component {
     }
 
     render() {
+        this.getDataPoll();
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
