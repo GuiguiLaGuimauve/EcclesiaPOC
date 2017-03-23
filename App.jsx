@@ -7,11 +7,10 @@ class Table extends React.Component {
             .then(function (response) {
                 document.getElementById('news').innerHTML = response.data.map(function (news) {
                     return (
-                        '<tr class=row>' +
-                        '<td>' + news.uuid + '</td>' +
-                        '<td>' + news.title + '</td>' +
-                        '<td>' + news.content + '</td>' +
-                        '</tr>'
+                      '<div class="grid-content">' +
+                      '<img class="grid-image" src="http://www.parcoursfrance.com/wp-content/uploads/Chartres1.jpg" alt="Mountain View">' +
+                      '<h2><span>' + news.title + '<br/>' + news.content + '</span></h2>' +
+                      '</div>'
                     );
                 }).join('');
             })

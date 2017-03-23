@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Poll from './Poll.jsx';
+import Table from './App.jsx';
+import Form from './Form.jsx';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {toto: 0};
+        this.state = {toto: 1};
         this.New = this.New.bind(this);
         this.Consult = this.Consult.bind(this);
-
     }
     New(e){
-        this.setState({toto:0});
-    }
-    Consult(e){
         this.setState({toto:1});
     }
+    Consult(e){
+        this.setState({toto:0});
+    }
     render() {
+      var content;
         if (this.state.toto == 0) {
-            var content = (
+            content = (
                 <div>
                 <Poll/>
                 <table id="poll"></table>
@@ -26,7 +29,12 @@ class App extends React.Component {
         }
         else if (this.state.toto == 1)
         {
-
+          content = (
+              <div>
+                <Form/>
+                <div id="news" className="grid"><Table /></div>
+              </div>
+          );
         }
        return (
        <div className="core">
