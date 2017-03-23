@@ -41,7 +41,7 @@ class Poll extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Proposition:
-                    <input type="text" value={this.state.proposition} onChange={this.handleChangeProposition} />
+                    <input className="" type="text" value={this.state.proposition} onChange={this.handleChangeProposition} />
                 </label>
                 <label>
                     End:
