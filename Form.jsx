@@ -37,11 +37,11 @@ class Form extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Title:
+          <font color="white">Title:</font>
           <input type="text" value={this.state.title} onChange={this.handleChangeTitle} />
         </label>
         <label>
-          Content:
+          <font color="white">Content:</font>
           <input type="text" value={this.state.content} onChange={this.handleChangeContent} />
         </label>
         <input type="button" value="Submit" onClick={this.handleSubmit}/>
