@@ -3,19 +3,25 @@ import ReactDOM from 'react-dom';
 import Poll from './Poll.jsx';
 import Table from './App.jsx';
 import Form from './Form.jsx';
+import Thread from './Threads.jsx';
 import Table1 from 'react-bootstrap/lib/Table'
+
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {toto: 1};
         this.New = this.New.bind(this);
         this.Consult = this.Consult.bind(this);
+        this.Thread = this.Thread.bind(this);
     }
     New(e){
         this.setState({toto:1});
     }
     Consult(e){
         this.setState({toto:0});
+    }
+    Thread(e){
+        this.setState({toto:2});
     }
     render() {
       var content;
@@ -32,9 +38,18 @@ class App extends React.Component {
           content = (
               <div>
                 <Form/>
-                <div id="news" className="grid"><Table /></div>
+                  <div id="news" className="grid"><Table /></div>
               </div>
           );
+        }
+        else if (this.state.toto == 2)
+        {
+            content = (
+                <div>
+                    <div id="threads" className="grid"><Thread /></div>
+                    <table id="post"></table>
+                </div>
+            )
         }
        return (
        <div className="core">
@@ -61,7 +76,7 @@ class App extends React.Component {
                     <li>
                         <a href="#">
                             <i className="fa fa-building sidebar-icon195.154.101.101" aria-hidden="true"></i>
-                            <span>Résidents</span>
+                            <span onClick={this.Thread}>Résidents</span>
                         </a>
                     </li>
                     <li>
