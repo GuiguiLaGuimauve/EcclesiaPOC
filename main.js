@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Poll from './Poll.jsx';
 import Table from './App.jsx';
 import Form from './Form.jsx';
-
+import Table1 from 'react-bootstrap/lib/Table'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class App extends React.Component {
             content = (
                 <div>
                 <Poll/>
-                <table id="poll"></table>
+                <Table1 striped bordered condensed hover id="poll"></Table1>
                 </div>
             );
         }

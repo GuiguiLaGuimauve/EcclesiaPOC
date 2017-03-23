@@ -3,7 +3,8 @@
  */
 import React from 'react';
 import axios from 'axios';
-
+import Button from 'react-bootstrap/lib/Button'
+import Table from 'react-bootstrap/lib/Table'
 class Poll extends React.Component {
     constructor(props) {
         super(props);
@@ -20,11 +21,11 @@ class Poll extends React.Component {
             .then(function (response) {
                 document.getElementById('poll').innerHTML = response.data.map(function (news) {
                     return (
-                        '<tr class=row>' +
-                        '<td>' + news.uuid + '</td>' +
+                        '<tr>' +
                         '<td>' + news.proposition + '</td>' +
                         '<td>' + news.end + '</td>' +
-                        '</tr>'
+                        '</tr>' +
+                        '</tbody>'
                     );
                 }).join('');
             })
@@ -52,6 +53,8 @@ class Poll extends React.Component {
             .catch(function (error) {
                 console.log(error);
             });
+        this.getDataPoll();
+
     }
 
     render() {
@@ -59,14 +62,15 @@ class Poll extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    Proposition:
-                    <input className="" type="text" value={this.state.proposition} onChange={this.handleChangeProposition} />
+                    <font color="white">Proposition:</font>
+                    <input  type="text" value={this.state.proposition} onChange={this.handleChangeProposition} />
                 </label>
                 <label>
-                    End:
+
+                    <font color="white">End:</font>
                     <input type="text" value={this.state.end} onChange={this.handleChangeEnd} />
                 </label>
-                <input type="button" value="Submit" onClick={this.handleSubmit}/>
+                <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
             </form>
         );
     }
