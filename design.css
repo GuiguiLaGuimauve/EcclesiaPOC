@@ -108,7 +108,7 @@ li.divider {
 }
 
 .grid {
-	margin-left: 10px;
+	margin-left: 40px;
 }
 
 .grid-content {
@@ -116,8 +116,8 @@ li.divider {
 	margin-top: 16px;
 	background-color: black;
 	opacity: 0.8;
-	height: 160px;
-	width: 240px;
+	height: 300px;
+	width: 450px;
 	/*-webkit-filter: contrast(150%);*/
 }
 
