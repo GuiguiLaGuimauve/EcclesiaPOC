@@ -24,19 +24,27 @@
     color: white;
     vertical-align: middle;
 }
- 
+.core-background {
+	display: inline;
+	opacity: 0.5;
+}	
 .core {
     width: 100%;
     min-height: 100%;
     background: #fafcfe;
+	background-image: url("IMG_0502.jpg");
+	background-size: 100%;
 }
+
+
  
 .sidebar {
     display: block;
     float: left;
     width: 260px; /*p-e en pourcentage ?*/
     height: 100%;
-    background-color: white;
+    background-color: black;
+	opacity: 0.7;
 }
  
 .sidebar-content {
@@ -55,7 +63,10 @@
 }
  
 .sidebar-content li a:hover {
-    border-color: #d1d9dd;
+    /*border-color: #d1d9dd;*/
+	color: 	#FFFFFF;
+	text-decoration: none;
+    font-weight: 600;
 }
  
 .sidebar-icon {
@@ -68,6 +79,7 @@
     padding: 0 10px 0 0;
     border-radius: 3px;
     font-size: 13px;
+	color: #F5F5F5;
     border: 1px solid transparent;
     line-height: 35px;
     height: 36px;
