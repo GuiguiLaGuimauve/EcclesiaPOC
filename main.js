@@ -47,7 +47,7 @@ class App extends React.Component {
             content = (
                 <div>
                     <div id="threads" className="grid"><Thread /></div>
-                    <table id="post"></table>
+                    <ul id="post" className="grid"></ul>
                 </div>
             )
         }
