@@ -3,6 +3,15 @@
     margin-top: -50px;
 }
 
+#post {
+    display: inline-block;
+    color: white;
+    width: 460px;
+    position: fixed;
+    left: 730px;
+    top: 100px;
+}
+
 body {
 	background: #fafcfe;
 	background-image: url("IMG_0502.jpg");
